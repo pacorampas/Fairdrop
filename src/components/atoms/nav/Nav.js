@@ -14,20 +14,22 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the FairDataSociety library. If not, see <http://www.gnu.org/licenses/>.
 
-import { memo } from 'react'
+import React, { memo } from 'react'
 import styled, { css } from 'styled-components'
 
-export const NavItem = memo(styled.li`
-  list-style: none;
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  cursor: pointer;
+const NavUl = styled.ul`
+  display: flex;
+  gap: 24px;
 
-  ${({ theme, active }) => css`
-    color: ${theme.colors.black.main};
-    text-decoration-line: ${active ? 'underline' : 'none'};
+  ${({ vertical }) => css`
+    flex-direction: ${vertical ? 'column' : 'row'};
   `};
-`)
+`
+
+export const Nav = memo(function Nav({ children, vertical }) {
+  return (
+    <nav>
+      <NavUl vertical={vertical}>{children}</NavUl>
+    </nav>
+  )
+})

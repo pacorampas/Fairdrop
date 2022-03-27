@@ -3,7 +3,7 @@ import { NavItem } from './NavItem'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/NavItem',
+  title: 'Example/Navigation/NavItem',
   component: NavItem,
 }
 
